@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			.stage {
+				background: chartreuse;
+				width: 600px;
+				position: relative;
+				overflow: hidden;
+				margin: 200px auto;
+			}
+			.stage img {
+				width: 60%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				vertical-align: middle;
+				transition: all 0.5s;
+			}
+			.stage img:first-child {
+				position: static;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stage">
+			<!-- <img src="./images/a1.png" alt="" />
+			<img src="./images/a2.png" alt="" />
+			<img src="./images/a3.png" alt="" />
+            <img src="./images/a4.png" alt="" /> -->
+			<!-- <img src="./images/1.jpg" alt="" />
+			<img src="./images/2.jpg" alt="" />
+			<img src="./images/3.jpg" alt="" />
+			<img src="./images/4.jpg" alt="" />
+			<img src="./images/5.jpg" alt="" />
+			<img src="./images/6.jpg" alt="" />
+			<img src="./images/7.jpg" alt="" />
+			<img src="./images/8.jpg" alt="" />
+			<img src="./images/9.jpg" alt="" /> -->
+			<img src="./images/u0.jpg" alt="">
+			<img src="./images/u1.jpg" alt="">
+			<img src="./images/u2.jpg" alt="">
+			<img src="./images/u3.jpg" alt="">
+			<img src="./images/u5.jpg" alt="">
+			<img src="./images/u6.jpg" alt="">
+			<img src="./images/u7.jpg" alt="">
+		</div>
+		<script>
+			var stage = document.querySelector(".stage");
+			var imgs = document.querySelectorAll(".stage img");
+
+			for (var i = 0; i < imgs.length; i++) {
+				imgs[i].style.left = (100 / imgs.length) * i + "%";
+				imgs[i].xxx = i;
+				imgs[i].onmouseover = function() {
+					console.log(this.xxx);
+					for (var j = 0; j < imgs.length; j++) {
+						if (j <= this.xxx) {
+							imgs[j].style.left =
+								j *
+									((stage.offsetWidth - imgs[0].offsetWidth) /
+										(imgs.length - 1)) +
+								"px";
+						} else {
+							imgs[j].style.left =
+								(j - 1) *
+									((stage.offsetWidth - imgs[0].offsetWidth) /
+										(imgs.length - 1)) +
+								imgs[0].offsetWidth +
+								"px";
+						}
+					}
+				};
+				imgs[i].onmouseout = function() {
+					for (let j = 0; j < imgs.length; j++) {
+						imgs[j].style.left = (100 / imgs.length) * j + "%";
+					}
+				};
+			}
+			var str = "手风琴。";
+			document.title = str;
+			var arr = str.split("");
+			setInterval(function() {
+				arr.push(arr.shift());
+				document.title = arr.join("");
+			}, 700);
+		</script>
+	</body>
+</html>

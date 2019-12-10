@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Player w/ React & GSAP 📺</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+            min-height: 100vh;
+        }
+
+        .video-player {
+            --accent: #19b5fe;
+            --border-width: 5;
+            background: var(--accent);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-player__action {
+            position: absolute;
+            font-weight: bold;
+            font-size: 2rem;
+            color: #fff;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            outline-color: transparent;
+            outline: 0;
+        }
+
+        .video-player__action svg {
+            height: 2.5rem;
+            fill: #fff;
+        }
+
+        .video-player__indicator {
+            position: absolute;
+            background: var(--accent);
+        }
+
+        .video-player__indicator:nth-of-type(1),
+        .video-player__indicator:nth-of-type(3) {
+            height: calc(var(--border-width) * 1px);
+            width: 100%;
+            -webkit-transform-origin: left;
+            transform-origin: left;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+
+        .video-player__indicator:nth-of-type(2),
+        .video-player__indicator:nth-of-type(4) {
+            height: 100%;
+            width: calc(var(--border-width) * 1px);
+            -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+        }
+
+        .video-player__indicator:nth-of-type(1) {
+            top: 0;
+        }
+
+        .video-player__indicator:nth-of-type(3) {
+            bottom: 0;
+        }
+
+        .video-player__indicator:nth-of-type(2) {
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .video-player__indicator:nth-of-type(4) {
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        .video-player video {
+            display: block;
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: center;
+            object-position: center;
+            width: 300px;
+            outline-color: transparent;
+        }
+
+        @media (min-width: 768px) {
+            .video-player video {
+                width: 640px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="https://www.17sucai.com/preview/1750622/2019-07-22/video/js/react.production.min.js"></script>
+    <script src="https://www.17sucai.com/preview/1750622/2019-07-22/video/js/react-dom.production.min.js"></script>
+    <script src="https://www.17sucai.com/preview/1750622/2019-07-22/video/js/TweenMax.min.js"></script>
+    <script src="https://www.17sucai.com/preview/1750622/2019-07-22/video/js/script.js"></script>
+
+</body>
+
+</html>
