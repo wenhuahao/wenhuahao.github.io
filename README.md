@@ -2,7 +2,7 @@
 [球球大战](https://wenhuahao.github.io/大战球球)
 # 视频
 
-[视频播放](https://wenhuahao.github.io/H5)
+[h5](https://wenhuahao.github.io/H5)
 
 # CSS3
 [3D盒子](https://wenhuahao.github.io/3D)
