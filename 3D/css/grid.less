@@ -1,0 +1,86 @@
+@sm:768px;
+@md:992px;
+@lg:1200px;
+.clearfix(){
+    *zoom: 1;
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+        font-size: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+body,ul,li,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+//1200
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media  (min-width: 768px){
+    .container {
+    width: 750px;
+}
+}
+
+@media  (min-width: 992px){
+    .container {
+    width: 970px;
+}
+}
+@media  (min-width: 1200px){
+    .container {
+    width: 1170px;
+}
+}
+
+
+//全屏
+.container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+//行
+.row{
+    .clearfix;
+}
+[class*=col-]{
+    float: left;
+}
+//列
+.make-grid(@s,@n){
+    .xxx(@n,@i:1) when (@i =<@n){
+        .col-@{s}-@{i} {
+            width: (@i * 100% / @n);
+        }
+        .xxx(@n,(@i + 1));
+    }
+    .xxx(@n)
+}
+//媒体查询
+.make-grid(xs, 12);
+//
+@media(min-width:@sm){
+    .make-grid(sm, 12);
+}
+@media(min-width:@md){
+    .make-grid(md, 12);
+}
+@media(min-width:@lg){
+    .make-grid(lg, 12);
+}
+.box{
+    display: flex;
+}
