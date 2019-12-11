@@ -17,6 +17,7 @@
 [手风琴](https://wenhuahao.github.io/手风琴)
 [耕田种菜](https://wenhuahao.github.io/种地耕田/首页)
 [守望先锋](https://wenhuahao.github.io/守望先锋)
+[图片放大镜](https://wenhuahao.github.io/图片放大镜)
 
 # jQ项目
 [全屏滚动](https://wenhuahao.github.io/全屏特效)
