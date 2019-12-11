@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			body {
+				background-color: #1f1f1f;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul {
+				list-style: none;
+			}
+			.tab {
+				width: 100%;
+				background-image: url("./images/bg1.png");
+				background-size: cover;
+				margin-top: 50px;
+			}
+			.tab .box {
+				width: 1200px;
+				position: relative;
+				margin: 0 auto;
+				height: 850px;
+			}
+			.tab .box .menus {
+				width: 200px;
+				height: 700px;
+				background: rgb(92, 94, 103);
+				float: left;
+				margin-top: 60px;
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			.tab .box .menus li {
+				width: 200px;
+				height: 70px;
+				background: rgb(92, 94, 103);
+				font-size: 20px;
+				color: #fff;
+				text-align: center;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+				line-height: 70px;
+				transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				-o-transition: all 0.3s;
+				-webkit-transition: all 0.3s;
+			}
+			.tab .box .menus li:nth-child(7) {
+				border-bottom: none;
+			}
+			.tab .box .bg {
+				height: 110px !important;
+				background: rgb(0, 159, 233) !important;
+				line-height: 110px !important;
+			}
+			.tab .right {
+				float: left;
+				width: 950px;
+				margin-top: 25px;
+				height: 800px;
+				overflow: hidden;
+				margin-left: 50px;
+				border-radius: 10px;
+				background: rgba(0, 0, 0, 0.5);
+			}
+			.tab .tab_right {
+				width: 950px;
+				height: 800px;
+				color: #fff;
+				text-align: center;
+
+				position: relative;
+			}
+			.tab .tab_right img {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+			}
+			.tab .scroll {
+				transition: all 0.5s;
+				-moz-transition: all 0.5s;
+				-o-transition: all 0.5s;
+				-webkit-transition: all 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<div class="box">
+				<ul class="menus">
+					<li class="bg">tab1</li>
+					<li>tab2</li>
+					<li>tab3</li>
+					<li>tab4</li>
+					<li>tab5</li>
+					<li>tab6</li>
+					<li>tab7</li>
+				</ul>
+				<div class="right">
+					<div class="scroll">
+						<div class="tab_right">
+							<img src="./images/a1.png" alt="" />
+						</div>
+						<div class="tab_right">
+							<img src="./images/a2.png" alt="" />
+						</div>
+						<div class="tab_right">
+							<img src="./images/a3.png" alt="" />
+						</div>
+						<div class="tab_right">
+							<img src="./images/a4.png" alt="" />
+						</div>
+						<div class="tab_right">
+							<img src="./images/a5.png" alt="" />
+						</div>
+						<div class="tab_right">
+							<img src="./images/a6.png" alt="" />
+						</div>
+						<div class="tab_right">
+							<img src="./images/a7.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+		<script>
+			$(".tab .menus li").each(function() {
+				$(".tab .menus li").mouseover(function() {
+					$(".tab .menus li").removeClass("bg");
+					$(this).addClass("bg");
+					var index = $(this).index();
+					var arr = [
+						"./images/bg1.png",
+						"./images/bg2.png",
+						"./images/bg3.png",
+						"./images/bg4.png",
+						"./images/bg5.png",
+						"./images/bg6.png",
+						"./images/bg7.png"
+					]; 
+					$(".tab .scroll").css("margin-top", -index * 800 + "px");
+					$(".tab").css(
+						"background-image",
+						"url(" + arr[index] + ")"
+					); 
+				});
+			});
+		</script>
+		<script>
+			var a = "jQ动画。";
+			document.title = a;
+			var b = a.split("");
+			setInterval(function() {
+				b.push(b.shift());
+				document.title = b.join("");
+			}, 700);
+		</script>
+	</body>
+</html>

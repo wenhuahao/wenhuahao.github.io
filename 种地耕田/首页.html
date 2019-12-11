@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/swipebox.css">
+        <link rel="stylesheet" href="./css/animate.css">
+		<link
+			rel="stylesheet"
+			href="./bootstrap-3.3.7-dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="./css/style copy.css">
+	</head>
+	<body>
+		<div class="header" id="home">
+			<div class="container">
+				<div class="header-top">
+					<div class="top-menu">
+						<span class="menu"
+							><img src="./images/nav.png" alt=""
+						/></span>
+						<ul>
+							<li><a href="" class="active">home</a></li><label>/</label>
+							<li><a href="">About</a></li><label>/</label>
+							<li><a href="">Services</a></li><label>/</label>
+							<li><a href="">products</a></li><label>/</label>
+							<li><a href="">blog</a></li><label>/</label>
+							<li><a href="">Contact</a></li>
+						</ul>
+                    </div>
+                    <div class="search">
+                            <form>
+                                <input type="text" value="Search.." onFocus="this.value = '';"
+                                    onBlur="if (this.value == '') {this.value = '';}">
+                                <input type="submit" value="">
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                </div>
+                <div class="logo wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s;">
+                <a href="">cultivation</a>
+                </div>
+                <div class="header-bottom">
+                    <div class="header-grids">
+                        
+                        <div class="col-md-3 header-grid">
+                            <div class="header-img1 wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s;">
+                            <img src="./images/icon4.png" class="img-responsive" alt="/">
+                            <h4>Dolor nunc vule </h4>
+                            <p>
+                                    Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo,
+                                    in ven e natis purus.
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 header-grid">
+                                <div class="header-img2 wow fadeInDownBig animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s;">
+                                <img src="./images/icon5.png" class="img-responsive" alt="/">
+                                <h4>Dolor nunc vule </h4>
+                                <p>
+                                        Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo,
+                                        in ven e natis purus.
+                                </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 header-grid">
+                                    <div class="header-img3 wow fadeInUpBig animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s;">
+                                    <img src="./images/icon6.png" class="img-responsive" alt="/">
+                                    <h4>Dolor nunc vule </h4>
+                                    <p>
+                                            Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo,
+                                            in ven e natis purus.
+                                    </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 header-grid">
+                                        <div class="header-img4 wow bounceInRight animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s;">
+                                        <img src="./images/icon7.png" class="img-responsive" alt="/">
+                                        <h4>Dolor nunc vule </h4>
+                                        <p>
+                                                Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo,
+                                                in ven e natis purus.
+                                        </p>
+                                        </div>
+                                    </div>
+                        
+                    </div>
+                </div>
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script>
+                $("span.menu").click(function () {
+                    $(".top-menu ul").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+             <script>
+                    var a = "种菜耕田。嘿嘿一";
+                    document.title = a;
+                    var b = a.split("");
+                    setInterval(function() {
+                        b.push(b.shift());
+                        document.title = b.join("");
+                    }, 700);
+                </script>
+	</body>
+</html>
