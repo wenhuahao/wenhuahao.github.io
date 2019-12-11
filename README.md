@@ -6,7 +6,7 @@
 [loading效果](https://wenhuahao.github.io/loading)
 # 视频
 
-[h5](https://wenhuahao.github.io/H5video效果)
+[html5video](https://wenhuahao.github.io/H5video效果)
 
 # CSS3
 [3D盒子](https://wenhuahao.github.io/3D)
